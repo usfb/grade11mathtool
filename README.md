@@ -19,6 +19,18 @@ Each chapter opens with a **Big Idea** that ties its sections together, aiming f
 
 Chapters 5+ (from the next page of the contents) are not included yet. See *Adding a chapter* below.
 
+## Documentation
+
+| File | What it holds |
+|---|---|
+| `docs/INTENT.md` | Who the app is for, the design principles, non-goals, and what "done" means for a section |
+| `docs/ARCHITECTURE.md` | Module layout, the chapter/section contract, library APIs, state, theming, pitfalls |
+| `docs/MAINTENANCE.md` | Running, the smoke test, change workflow, adding sections/chapters, updating KaTeX, troubleshooting |
+| `docs/CONTENT-MAP.md` | Per-section inventory of the idea, picture, controls and self-check, plus planned work |
+| `docs/DECISIONS.md` | Decision log with reasons |
+| `CHANGELOG.md` | Human-readable change history by release |
+| `CLAUDE.md` | Rules for AI-assisted maintenance |
+
 ## Running it
 
 There is no build step. Either:
@@ -26,6 +38,8 @@ There is no build step. Either:
 - **Open `index.html` directly** in any modern browser (Chrome, Edge, Firefox, Safari). KaTeX and all fonts are vendored under `vendor/`, so it works offline.
 - **Serve the folder** for the cleanest experience: `python3 -m http.server 8000` then visit `http://localhost:8000`.
 - **GitHub Pages**: in the repository settings, publish from the branch root. The site is fully static.
+
+To verify a change: `npm install` once, then `npm run check` (see `docs/MAINTENANCE.md`).
 
 Progress ("mark as understood") and the light/dark theme choice are saved in the browser's local storage, so they persist per device.
 
@@ -42,6 +56,8 @@ js/lib/graph.js       SVG function plotter (Plot) and free-form canvas (Canvas)
 js/lib/quad.js        shared parabola drawing + auto-bounds
 js/chapters/chN.js    one module per chapter: big idea + sections
 vendor/katex/         KaTeX 0.16.11 (MIT), woff2 fonts only
+scripts/check.cjs     headless smoke test (Playwright)
+docs/                 intent, architecture, maintenance, content map, decisions
 ```
 
 ## Adding a chapter
