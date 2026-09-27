@@ -7,7 +7,7 @@ Reference sections by number (e.g. `2.4`) so entries can be found from the app.
 ## [Unreleased]
 
 ### Added
-- GitHub Pages deployment workflow: pushes to `main` publish the site; pull requests run the smoke test.
+- GitHub Pages deployment workflow: pushes to `main` publish the site (enabling Pages on first run); pull requests run the smoke test.
 - Project documentation: intent, architecture, maintenance guide, content map, decision log, this changelog, and a `CLAUDE.md` for AI-assisted maintenance.
 - `scripts/check.cjs` headless smoke test and `package.json` scripts (`check`, `serve`).
 
