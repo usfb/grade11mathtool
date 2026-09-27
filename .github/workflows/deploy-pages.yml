@@ -1,6 +1,8 @@
 # Publishes the app to GitHub Pages on every push to main, and runs the
 # smoke test on pull requests. The site is static, so "build" is just
 # uploading the repository as-is (docs/ and scripts/ ride along harmlessly).
+# Pages itself must be enabled once by an admin (Settings → Pages → Source:
+# GitHub Actions); the workflow token cannot create the site.
 name: Deploy to GitHub Pages
 
 on:

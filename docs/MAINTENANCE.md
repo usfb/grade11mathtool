@@ -31,7 +31,7 @@ If Playwright's browser is missing: `npx playwright install chromium`.
 
 ## Publishing (GitHub Pages)
 
-The workflow enables Pages itself on its first run (`configure-pages` with `enablement: true`). If that step is refused, do it once by hand: **Settings → Pages → Build and deployment → Source: GitHub Actions**. After that, every merge to `main` deploys automatically via `.github/workflows/deploy-pages.yml`, and the live URL is `https://<owner>.github.io/<repo>/`.
+One-time setup by a repository admin (the workflow token is not allowed to create the Pages site): **Settings → Pages → Build and deployment → Source: GitHub Actions**. After that, every merge to `main` deploys automatically via `.github/workflows/deploy-pages.yml`, and the live URL is `https://<owner>.github.io/<repo>/`.
 
 Notes:
 - GitHub Pages on a **private** repository requires GitHub Pro, Team or Enterprise. On a free plan, either make the repository public (the app contains no personal data; progress lives only in each viewer's browser) or host elsewhere (Netlify and Cloudflare Pages both deploy a static folder from GitHub for free, private repos included).
