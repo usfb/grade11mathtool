@@ -37,7 +37,7 @@ There is no build step. Either:
 
 - **Open `index.html` directly** in any modern browser (Chrome, Edge, Firefox, Safari). KaTeX and all fonts are vendored under `vendor/`, so it works offline.
 - **Serve the folder** for the cleanest experience: `python3 -m http.server 8000` then visit `http://localhost:8000`.
-- **GitHub Pages**: in the repository settings, publish from the branch root. The site is fully static.
+- **GitHub Pages**: set *Settings → Pages → Source* to **GitHub Actions** once; every merge to `main` then deploys automatically (see `docs/MAINTENANCE.md`, *Publishing*).
 
 To verify a change: `npm install` once, then `npm run check` (see `docs/MAINTENANCE.md`).
 

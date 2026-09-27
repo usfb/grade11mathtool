@@ -27,7 +27,17 @@ If Playwright's browser is missing: `npx playwright install chromium`.
 3. Run `npm run check`; open the screenshots for any page you touched and look at both the default and wiggled state.
 4. Add a line to `CHANGELOG.md` under **Unreleased** (see *Tracking changes* below).
 5. Commit with a message whose first line says what changed for the student, not how (e.g. "3.6: show that a perfect-square discriminant means rational roots").
-6. Open a pull request. Merging to `main` publishes the site if GitHub Pages is set to the branch root.
+6. Open a pull request. The `check` job runs the smoke test in CI. Merging to `main` triggers the `deploy` job, which publishes the site to GitHub Pages within a minute or two.
+
+## Publishing (GitHub Pages)
+
+One-time setup, in the repository on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**. After that, every merge to `main` deploys automatically via `.github/workflows/deploy-pages.yml`, and the live URL is `https://<owner>.github.io/<repo>/`.
+
+Notes:
+- GitHub Pages on a **private** repository requires GitHub Pro, Team or Enterprise. On a free plan, either make the repository public (the app contains no personal data; progress lives only in each viewer's browser) or host elsewhere (Netlify and Cloudflare Pages both deploy a static folder from GitHub for free, private repos included).
+- The app uses only relative paths and hash routing, so it works unchanged under the `/<repo>/` sub-path.
+- Share the URL directly with the student. Nothing is stored server-side; each device keeps its own progress.
+- To roll back, revert the commit on `main`; the next deploy publishes the previous state.
 
 ## Tracking changes
 
